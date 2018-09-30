@@ -5,22 +5,22 @@ import unittest
 # that is n copies of the original string.
 
 def string_times(string, n):
-    return n*string;
+    return n * string;
 
 # Given an array of ints, return True if one of the first 4 elements
 # in the array is a 9. The array length may be less than 4.
 def array_front9(nums):
-    longueur=min(len(nums), 4)
-    if 9 in nums[0:longueur]:
-        return True;
-    return False;
+    #longueur=min(len(nums), 4)
+    #if 9 in nums[0:longueur]:
+    #    return True;
+    return 9 in nums[:4];
 
 # Given a string, return the count of the number of times
 # that a substring length 2 appears  in the string and also as
 # the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
 def last2(string):
     n = 0;
-    for i in range(0,len(string)-3):
+    for i in range(0, len(string)-3):
         #print(string[i:i+2]);
         if string[i:i+2] == string[-2:]:
             n += 1;
@@ -41,7 +41,8 @@ def occurences(text):
 #Write a program that maps a list of words into a list of
 #integers representing the lengths of the correponding words.
 def length_words(array):
-    return [len(w) for w in array];
+    #return [len(w) for w in array];
+    return list(map(len, array));
 
 
 #Write a function that takes a number and returns a list of its digits.
@@ -53,13 +54,25 @@ def number2digits(number):
 #English is translated to Pig Latin by taking the first letter of every word,
 #moving it to the end of the word and adding 'ay'
 def pigLatin(text):
-    s = text.lower().split(' ');
-    
-    return
+    sp = text.lower().split(' ');
+    so = [];
+    for s in sp:
+        so.append(s[1:] + s[0] + "ay");
+    return ' '.join(so).capitalize();
 
 
 #write fizbuzz programm
 def fizbuzz():
+    for i in range(101):
+        a = '';
+        if i%3 == 0:
+            a += "fizz";
+        if i%5 == 0:
+            a += "buzz";
+        if a == '':
+            print(i);
+        else:
+            print(a);
     return
 
 
