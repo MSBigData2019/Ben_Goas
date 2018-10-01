@@ -65,9 +65,9 @@ def pigLatin(text):
 def fizbuzz():
     for i in range(101):
         a = '';
-        if i%3 == 0:
+        if i % 3 == 0:
             a += "fizz";
-        if i%5 == 0:
+        if i % 5 == 0:
             a += "buzz";
         if a == '':
             print(i);
