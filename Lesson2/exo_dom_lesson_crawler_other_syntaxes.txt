@@ -1,0 +1,4 @@
+#also the 2nd span
+nasdaqChangeSrc.select('span')[1].text
+#1 more specific span, still in a list
+nasdaqChangeSrc.select('span[style="font-size: 23px;"]')[0].text
